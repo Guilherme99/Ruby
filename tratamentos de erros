@@ -1,0 +1,36 @@
+#require File.expand_path(File.join(File.dirname(__FILE__), 'Restaurante.rb'))
+#require 'modulo/funcionalidades/coisa_importante'
+
+def pesquisa_banco(nome)
+  if nome.size < 10
+    throw :nome_invalido, "Nome invalido, digite novamente"
+  end
+  # executa a pesquisa
+  "cliente #{nome}"
+end
+
+def executa_pesquisa(nome)
+  catch :nome_invalido do
+    cliente = pesquisa_banco(nome)
+    return cliente
+  end
+end
+
+puts executa_pesquisa("ana")
+# => "Nome invalido, digite novamente"
+
+puts executa_pesquisa("guilherme silveira")
+# => cliente guilherme silveira
+
+#criar arquivo
+# print "Escreva um texto: " 
+# texto = gets
+# File.open( "caelum.txt", "w" ) do |f| 
+#   f << texto 
+# end
+# E para imprimir seu conteúdo:
+
+# Dir.entries('caelum').each do |file_name|
+#   idea = File.read( file_name )
+#   puts idea
+# end
