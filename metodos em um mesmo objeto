@@ -1,0 +1,17 @@
+class Pessoa 
+  def metodo1
+    puts "1"
+  end 
+end 
+
+puts "Instancia normal"
+ob=Pessoa.new
+puts ob.metodo1
+
+puts "Instancia em um próprio objeto(tudo em ruby é objeto)"
+#singleton do objeto
+def ob.andar
+  puts "Objeto em objeto"
+end 
+
+puts ob.andar
